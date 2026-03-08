@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { Link, usePage } from '@inertiajs/vue3'
-import { BookOpen, FolderGit2, LayoutGrid, ShieldCheck, UserCog2 } from 'lucide-vue-next'
+import { UserRound, FolderGit2, LayoutGrid, ShieldCheck, UserCog2 } from 'lucide-vue-next'
 import AppLogo from '@/components/AppLogo.vue'
 import NavFooter from '@/components/NavFooter.vue'
-import NavMain from '@/components/NavMain.vue'
+import NavRole from '@/components/NavRole.vue'
 import NavDashboard from '@/components/NavDashboard.vue'
 import NavUser from '@/components/NavUser.vue'
 import {
@@ -28,16 +28,16 @@ const mainNavItems: NavItem[] = [
 },
 ]
 
-const mainNav2Items: NavItem[] = [
+const mainNavRole: NavItem[] = [
 {
-    title: 'Role',
-    href: '/role',
-    icon: UserCog2,
+    title: 'Pengguna',
+    href: 'users',
+    icon: UserRound,
 },
 {
-    title: 'Hak Akses',
-    href: '/permission',
-    icon: ShieldCheck,
+    title: 'Role dan Hak Akses',
+    href: 'roles',
+    icon: UserCog2,
 },
 ]
 
@@ -61,7 +61,7 @@ const isActive = (url: string) => page.url.startsWith(url)
 
         <SidebarContent>
             <NavDashboard :items="mainNavItems" />
-            <NavMain :items="mainNav2Items" />
+            <NavRole :items="mainNavRole" />
         </SidebarContent>
 
 
